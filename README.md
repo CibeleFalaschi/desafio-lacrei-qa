@@ -1,96 +1,152 @@
-Desafio QA — Lacrei Saúde
+🧪 Desafio QA — Lacrei Saúde
 
-1. Sobre o projeto
+Avaliação de qualidade de software contemplando testes funcionais, Gherkin, acessibilidade, responsividade, performance, automação e CI/CD.
 
-Este repositório contém os artefatos desenvolvidos para o desafio técnico de QA da Lacrei Saúde, incluindo cenários Gherkin, documentação, evidências, testes de desempenho, testes automatizados e CI/CD.
+📌 Sobre o projeto
 
-O objetivo é avaliar os principais fluxos da aplicação considerando qualidade funcional, desempenho, acessibilidade, responsividade e automação.
+Este repositório reúne os artefatos desenvolvidos para o desafio técnico de QA da Lacrei Saúde, incluindo:
+
+cenários em Gherkin;
+
+documentação e estratégia de testes;
+
+evidências das execuções;
+
+testes de desempenho;
+
+testes de acessibilidade;
+
+avaliação de responsividade;
+
+testes automatizados;
+
+pipeline de CI/CD.
+
+O objetivo foi avaliar os principais fluxos da aplicação considerando qualidade funcional, desempenho, acessibilidade, responsividade e automação.
 
 🔗 Links da entrega
 
-Repositório GitHub: https://github.com/CibeleFalaschi/desafio-lacrei-qa
+Recurso
 
-GitHub Actions: https://github.com/CibeleFalaschi/desafio-lacrei-qa/actions
+Acesso
 
-Documentação completa no Notion: https://harmonious-potential-7a5.notion.site/Desafio-T-cnico-QA-Lacrei-Sa-de-3d94c363fe40802a9d5dc92bb4d3453d
+📁 Repositório GitHub
 
-2. Ambiente e pré-requisitos
+https://github.com/CibeleFalaschi/desafio-lacrei-qa
 
-Ambiente de testes
+⚙️ GitHub Actions
 
-Aplicação: ambiente de staging da Lacrei Saúde
+https://github.com/CibeleFalaschi/desafio-lacrei-qa/actions
 
-Testes funcionais mobile: Samsung Galaxy A12, Android, Google Chrome
+📝 Documentação completa — Notion
 
-Lighthouse: Chrome, modo Mobile
+https://harmonious-potential-7a5.notion.site/Desafio-T-cnico-QA-Lacrei-Sa-de-3d94c363fe40802a9d5dc92bb4d3453d
 
-Testes de desempenho: k6
+🖥️ 1. Ambiente e pré-requisitos
 
-Automação funcional: Cypress + Cucumber
+🌐 Ambiente de testes
 
-CI/CD: GitHub Actions
+Item
 
-Pré-requisitos
+Configuração
 
-Para executar os artefatos do projeto, será necessário ter instalados:
+Aplicação
 
-Git
+Ambiente de staging da Lacrei Saúde
 
-Node.js e npm
+Testes funcionais mobile
+
+Samsung Galaxy A12 — Android — Google Chrome
+
+Lighthouse
+
+Chrome — modo Mobile
+
+Testes de desempenho
 
 k6
 
-As dependências do projeto podem ser instaladas com:
+Automação funcional
+
+Cypress + Cucumber
+
+CI/CD
+
+GitHub Actions
+
+🧰 Pré-requisitos
+
+Para executar os artefatos do projeto, é necessário ter instalado:
+
+Git
+
+Node.js
+
+npm
+
+k6
+
+📦 Instalação das dependências
+
+Instalação padrão:
 
 npm install
 
-Para reproduzir exatamente as dependências versionadas no projeto, recomenda-se utilizar:
+Para reproduzir exatamente as dependências versionadas no projeto:
 
 npm ci
 
-3. Configuração do ambiente
+🔐 2. Configuração do ambiente e segurança
 
-Credenciais utilizadas nos testes não devem ser armazenadas diretamente no código.
+⚠️ Credenciais de teste não devem ser armazenadas diretamente no código-fonte.
 
-As variáveis necessárias para os testes autenticados e de performance são configuradas localmente por meio de arquivo .env.
+As variáveis necessárias para os testes autenticados e de performance são configuradas localmente por meio de um arquivo .env.
 
-Exemplo:
+💻 Configuração local
 
-K6_EMAIL=seu_email K6_PASSWORD=sua_senha
+Crie um arquivo .env na raiz do projeto:
 
-O arquivo .env está incluído no .gitignore e não deve ser enviado ao repositório.
+K6_EMAIL=seu_email
+K6_PASSWORD=sua_senha
 
-No GitHub Actions, as mesmas credenciais são fornecidas por meio de Repository Secrets:
+🔒 O arquivo .env está incluído no .gitignore e não deve ser enviado ao repositório.
 
-K6_EMAIL K6_PASSWORD
+⚙️ GitHub Actions
 
-Não utilizar credenciais reais em arquivos versionados, screenshots ou documentação pública.
+No GitHub Actions, as mesmas credenciais são fornecidas de forma segura por meio de Repository Secrets:
 
-4. Como executar os testes
+K6_EMAIL
+K6_PASSWORD
 
-4.1 Testes manuais
+Dessa forma, as credenciais não ficam expostas no código-fonte ou no repositório público.
+
+🚫 Não utilizar credenciais reais em arquivos versionados, screenshots, vídeos ou documentação pública.
+
+🧪 3. Como executar os testes
+
+3.1 📝 Testes manuais
 
 Os testes funcionais foram executados manualmente no ambiente de staging.
 
-Os casos de teste e resultados detalhados estão documentados no Notion do projeto.
+📱 Ambiente mobile
 
-Os testes funcionais mobile foram realizados em:
+Dispositivo: Samsung Galaxy A12
 
-Samsung Galaxy A12
+Sistema: Android
 
-Android
+Navegador: Google Chrome
 
-Google Chrome
+Tipo: dispositivo físico
 
-Dispositivo físico
+Os casos de teste e resultados detalhados estão documentados no Notion.
 
 Os cenários Gherkin utilizados como base para os testes estão disponíveis em:
 
 cypress/e2e/
 
-4.2 Testes automatizados
+3.2 🤖 Testes automatizados
 
-Os testes funcionais automatizados foram implementados utilizando:
+A automação foi implementada utilizando:
 
 Cypress 16.0.0
 
@@ -104,99 +160,164 @@ O fluxo prioritário definido para automação é o cadastro de pessoa paciente,
 
 Também foi automatizado o fluxo de busca e agendamento.
 
-Para abrir o Cypress em modo interativo:
+🖥️ Abrir o Cypress em modo interativo
 
 npm run cy:open
 
-Para executar os testes em modo headless:
+⚡ Executar os testes em modo headless
 
 npm test
 
-O mesmo comando de execução headless é utilizado no pipeline de CI.
+O mesmo comando headless é utilizado no pipeline de CI.
 
-4.3 Teste de desempenho com k6
+3.3 📈 Teste de desempenho com k6
 
 O cenário de desempenho da API foi automatizado utilizando k6.
 
-Para executar:
+▶️ Execução
 
 k6 run performance/performance.js
 
-As credenciais devem estar disponíveis por meio das variáveis de ambiente:
+As credenciais devem estar disponíveis por meio das variáveis:
 
-K6_EMAIL K6_PASSWORD
+K6_EMAIL
+K6_PASSWORD
 
 O teste avalia a busca de profissionais por especialidade e utiliza carga de até 30 usuários virtuais.
 
-O script está disponível em:
+📂 Arquivos
+
+Script:
 
 performance/performance.js
 
-O relatório detalhado da execução está em:
+Relatório:
 
 performance/performance-report.html
 
-4.4 Lighthouse
+3.4 🔎 Lighthouse
 
 Foi realizada uma avaliação automatizada da aplicação utilizando Lighthouse em modo Mobile.
 
-Resultados obtidos:
+📊 Resultados
 
 Métrica
 
 Resultado
 
-Performance
+⚡ Performance
 
 35/100
 
-Accessibility
+♿ Accessibility
 
 96/100
 
-FCP
+🎨 FCP
 
 2,0 s
 
-LCP
+🖼️ LCP
 
 13,2 s
 
-TBT
+⏱️ TBT
 
 3.670 ms
 
-CLS
+📐 CLS
 
 0
 
-Speed Index
+🚀 Speed Index
 
 9,3 s
 
-O relatório HTML da execução está em:
+Relatório:
 
 performance/lighthouse-report.html
 
-5. Organização do projeto
+⚠️ O resultado de Performance ficou abaixo do esperado e foi registrado na avaliação. A pontuação de Accessibility atingiu 96/100.
 
-desafio_lacrei/ │ ├── .github/ │ └── workflows/ │ └── cypress.yml │ ├── cypress/ │ ├── e2e/ │ │ ├── cadastro.feature │ │ └── busca_agendamento.feature │ │ │ ├── fixtures/ │ │ │ ├── screenshots/ │ │ │ └── support/ │ ├── commands.js │ ├── e2e.js │ └── step_definitions/ │ ├── cadastro.steps.js │ └── busca_agendamento.steps.js │ ├── docs/ │ └── evidencias/ │ ├── BUG-001... │ ├── BUG-002... │ ├── BUG-003... │ ├── BUG-004... │ ├── BUG-005... │ ├── BUG-006... │ └── BUG-007... │ ├── performance/ │ ├── lighthouse-report.html │ ├── performance-report.html │ └── performance.js │ ├── .env ├── .gitignore ├── cypress.config.js ├── package.json ├── package-lock.json └── README.md
+📁 4. Organização do projeto
 
-A pasta cypress/e2e/ contém os cenários Gherkin utilizados na automação.
+desafio-lacrei/
+│
+├── .github/
+│   └── workflows/
+│       └── cypress.yml
+│
+├── cypress/
+│   ├── e2e/
+│   │   ├── cadastro.feature
+│   │   └── busca_agendamento.feature
+│   │
+│   ├── fixtures/
+│   ├── screenshots/
+│   ├── support/
+│   │   ├── commands.js
+│   │   └── e2e.js
+│   │
+│   └── step_definitions/
+│       ├── cadastro.steps.js
+│       └── busca_agendamento.steps.js
+│
+├── docs/
+│   └── evidencias/
+│       ├── BUG-001...
+│       ├── BUG-002...
+│       ├── BUG-003...
+│       ├── BUG-004...
+│       ├── BUG-005...
+│       ├── BUG-006...
+│       └── BUG-007...
+│
+├── performance/
+│   ├── lighthouse-report.html
+│   ├── performance-report.html
+│   └── performance.js
+│
+├── .gitignore
+├── cypress.config.js
+├── package.json
+├── package-lock.json
+└── README.md
 
-A pasta docs/evidencias/ contém as evidências relacionadas aos bugs e oportunidades de melhoria encontrados durante a avaliação.
+📂 Diretórios principais
 
-A pasta performance/ contém o script de performance e os relatórios HTML gerados pelo k6 e pelo Lighthouse.
+Diretório
 
-6. Casos de teste em Gherkin
-
-Os cenários Gherkin estão organizados no diretório:
+Finalidade
 
 cypress/e2e/
 
-Foram contemplados os principais fluxos definidos no desafio:
+Cenários Gherkin utilizados na automação
 
-Cadastro
+cypress/step_definitions/
+
+Implementação dos passos dos cenários
+
+docs/evidencias/
+
+Evidências relacionadas aos bugs encontrados
+
+performance/
+
+Script e relatórios de performance
+
+.github/workflows/
+
+Configuração do pipeline de CI/CD
+
+🥒 5. Casos de teste em Gherkin
+
+Os cenários Gherkin estão organizados em:
+
+cypress/e2e/
+
+Foram contemplados os principais fluxos definidos no desafio.
+
+👤 Cadastro
 
 Cadastro com dados válidos
 
@@ -208,7 +329,7 @@ Cadastro com senhas diferentes
 
 Cadastro com e-mail já cadastrado
 
-Login
+🔑 Login
 
 Login com credenciais válidas
 
@@ -218,11 +339,11 @@ Login com formato de e-mail inválido
 
 Login com credenciais inválidas
 
-Recuperação de senha
+🔄 Recuperação de senha
 
 Fluxo completo de recuperação e alteração de senha
 
-Busca e agendamento
+🔎 Busca e agendamento
 
 Acesso à busca após o pós-cadastro
 
@@ -230,17 +351,21 @@ Busca de profissional por especialidade
 
 Acesso ao agendamento de profissional
 
-7. Bugs e evidências
+🐞 6. Bugs e evidências
 
-Foram identificados e documentados sete bugs/oportunidades de melhoria durante a avaliação.
+Foram identificados e documentados 7 bugs/oportunidades de melhoria durante a avaliação.
 
 As evidências estão organizadas em:
 
 docs/evidencias/
 
-Os registros detalhados dos bugs estão disponíveis no Notion e no GitHub Issues.
+Os registros detalhados estão disponíveis no:
 
-Os problemas identificados incluem:
+📝 Notion
+
+🐙 GitHub Issues
+
+🔎 Principais achados
 
 problemas de layout e responsividade em telas mobile;
 
@@ -252,11 +377,19 @@ ausência de limitação aparente para grande quantidade de caracteres no campo 
 
 ausência de indicador visual de foco durante a navegação por teclado.
 
-Antes da publicação, evidências contendo dados pessoais devem ter essas informações ocultadas.
+🔒 Antes da publicação, evidências contendo dados pessoais devem ter essas informações ocultadas.
 
-8. Acessibilidade
+♿ 7. Acessibilidade
 
-Foram realizados testes de acessibilidade utilizando Lighthouse, navegação por teclado e leitor de tela NVDA.
+Foram realizados testes de acessibilidade utilizando:
+
+Lighthouse;
+
+navegação por teclado;
+
+leitor de tela NVDA.
+
+📊 Resultados
 
 Avaliação
 
@@ -264,49 +397,57 @@ Resultado
 
 Lighthouse — Accessibility
 
-PASSOU — 96/100
+✅ PASSOU — 96/100
 
 Navegação por teclado
 
-PASSOU COM RESSALVAS
+⚠️ PASSOU COM RESSALVAS
 
 Indicador visual de foco
 
-BUG-007
+🐞 BUG-007
 
 NVDA — leitor de tela
 
-PASSOU
+✅ PASSOU
 
-Navegação por teclado
+⌨️ Navegação por teclado
 
 Foi realizada navegação utilizando Tab e Shift + Tab em diferentes telas da aplicação.
 
 A navegação é funcional, porém foi identificado que alguns elementos recebem foco sem apresentar indicador visual claramente perceptível.
 
-O achado foi registrado como BUG-007 — Ausência de indicador visual de foco na navegação por teclado.
+O achado foi registrado como:
 
-NVDA
+🐞 BUG-007 — Ausência de indicador visual de foco na navegação por teclado.
 
-Foi realizada uma tentativa de avaliação utilizando o leitor de tela NVDA com Google Chrome em ambiente desktop.
+🔊 NVDA
 
-Durante a avaliação da aplicação, os elementos da interface foram anunciados corretamente pelo leitor de tela, permitindo identificar e compreender os conteúdos e controles apresentados.
+Foi realizada avaliação utilizando o leitor de tela NVDA com Google Chrome em ambiente desktop.
 
-A leitura dos elementos ocorreu de forma consistente durante o teste realizado. Não foi identificado, neste teste, comportamento que justificasse a abertura de um bug relacionado à leitura por leitor de tela.
+Durante a avaliação, os elementos da interface foram anunciados corretamente pelo leitor de tela, permitindo identificar e compreender os conteúdos e controles apresentados.
 
-9. Testes automatizados
+Não foi identificado, neste teste, comportamento que justificasse a abertura de um bug relacionado à leitura por leitor de tela.
 
-A automação foi desenvolvida utilizando Cypress 16.0.0, Cucumber e o preprocessor @badeball/cypress-cucumber-preprocessor.
+🤖 8. Testes automatizados
 
-Fluxos automatizados
+A automação foi desenvolvida utilizando:
 
-Cadastro de pessoa paciente
+Cypress 16.0.0
+
+Cucumber
+
+Gherkin
+
+@badeball/cypress-cucumber-preprocessor
+
+🔄 Fluxo 1 — Cadastro de pessoa paciente
 
 Arquivo:
 
 cypress/e2e/cadastro.feature
 
-Fluxo:
+Fluxo automatizado:
 
 acesso à página de cadastro;
 
@@ -320,15 +461,15 @@ envio do cadastro;
 
 validação da tela de confirmação.
 
-Status: PASSOU
+Status: ✅ PASSOU
 
-Busca e agendamento
+🔎 Fluxo 2 — Busca e agendamento
 
 Arquivo:
 
-cypress/e2e/busca\_agendamento.feature
+cypress/e2e/busca_agendamento.feature
 
-Fluxo:
+Fluxo automatizado:
 
 login com credenciais válidas;
 
@@ -344,51 +485,51 @@ agendamento de atendimento;
 
 acesso à tela de verificação de telefone/código.
 
-Status: PASSOU
+Status: ✅ PASSOU
 
-Credenciais
+🔐 9. Credenciais
 
 As credenciais utilizadas nos testes autenticados são armazenadas em variáveis de ambiente e não são versionadas no repositório.
 
-Variáveis utilizadas:
+Variáveis utilizadas
 
 K6_EMAIL
-
 K6_PASSWORD
 
 O arquivo .env está incluído no .gitignore.
 
-10. CI/CD — GitHub Actions
+⚙️ 10. CI/CD — GitHub Actions
 
 O projeto possui um workflow configurado no GitHub Actions para execução automática dos testes E2E.
 
-O workflow é disparado automaticamente em:
+🚀 Gatilhos
+
+O workflow é executado automaticamente em:
 
 push
-
 pull_request
 
-O pipeline realiza:
+🔄 Etapas do pipeline
 
-checkout do código;
+Checkout do código
+        ↓
+Configuração do Node.js
+        ↓
+Instalação das dependências com npm ci
+        ↓
+Execução dos testes Cypress + Cucumber
+        ↓
+Geração dos relatórios JUnit
+        ↓
+Armazenamento dos relatórios e evidências
 
-configuração do Node.js;
-
-instalação das dependências com npm ci;
-
-execução dos testes Cypress + Cucumber;
-
-geração dos relatórios JUnit;
-
-armazenamento dos relatórios e evidências como Artifact.
-
-O fluxo utilizado no CI é:
+▶️ Comando utilizado no CI
 
 npx cypress run --e2e --browser chrome
 
 As credenciais utilizadas nos testes autenticados são fornecidas por meio de GitHub Repository Secrets, sem exposição no código.
 
-Relatórios do pipeline
+📊 Relatórios do pipeline
 
 Ao final da execução, o GitHub Actions disponibiliza o Artifact:
 
@@ -396,7 +537,7 @@ cypress-relatorios
 
 O Artifact contém os relatórios JUnit gerados para os arquivos .feature executados, permitindo consultar os resultados após a execução do workflow.
 
-11. Documentação
+📚 11. Documentação
 
 A documentação detalhada da execução dos testes está organizada no Notion.
 
@@ -426,94 +567,106 @@ segurança;
 
 limitações e próximos passos.
 
-Este README funciona como um guia técnico e de execução do projeto.
+Este README funciona como um guia técnico e de execução do projeto, enquanto o Notion concentra a documentação detalhada da avaliação.
 
-12. Status do projeto
+✅ 12. Status do projeto
 
-Concluído
+🎯 Concluído
 
-Cenários funcionais em Gherkin
+✅ Cenários funcionais em Gherkin
 
-Execução dos principais testes funcionais
+✅ Execução dos principais testes funcionais
 
-Documentação dos bugs encontrados
+✅ Documentação dos bugs encontrados
 
-Evidências dos bugs
+✅ Evidências dos bugs
 
-Teste de desempenho com k6
+✅ Teste de desempenho com k6
 
-Relatório HTML do k6
+✅ Relatório HTML do k6
 
-Avaliação com Lighthouse
+✅ Avaliação com Lighthouse
 
-Relatório HTML do Lighthouse
+✅ Relatório HTML do Lighthouse
 
-Avaliação automatizada de acessibilidade
+✅ Avaliação automatizada de acessibilidade
 
-Testes manuais complementares de acessibilidade
+✅ Testes manuais complementares de acessibilidade
 
-Finalização da avaliação de responsividade
+✅ Finalização da avaliação de responsividade
 
-Automação funcional com Cypress + Cucumber
+✅ Automação funcional com Cypress + Cucumber
 
-GitHub Actions
+✅ GitHub Actions
 
-Relatórios da automação no pipeline
+✅ Relatórios da automação no pipeline
 
-Revisão final
+✅ Revisão final
 
-Revisão final de segurança e documentação
+✅ Revisão de segurança e documentação
 
-Criação/revisão dos GitHub Issues dos bugs e melhorias
+✅ Criação/revisão dos GitHub Issues dos bugs e melhorias
 
-13. Resultados principais
+📊 13. Resultados principais
 
 Avaliação
 
 Resultado
 
-Testes funcionais principais
+🧪 Testes funcionais principais
 
 Executados
 
-Bugs identificados
+🐞 Bugs identificados
 
 7
 
-k6 — falhas HTTP
+📈 k6 — falhas HTTP
 
 0%
 
-k6 — checks
+✔️ k6 — checks
 
 100%
 
-k6 — resultado
+📊 k6 — resultado
 
-PASSOU COM RESSALVAS
+⚠️ PASSOU COM RESSALVAS
 
-Lighthouse — Performance
+⚡ Lighthouse — Performance
 
 35/100
 
-Lighthouse — Accessibility
+♿ Lighthouse — Accessibility
 
 96/100
 
-Automação Cypress + Cucumber
+🤖 Cypress + Cucumber
 
 2/2 features passando no CI
 
-GitHub Actions
+⚙️ GitHub Actions
 
-PASSOU
+✅ PASSOU
 
-Relatórios JUnit
+📄 Relatórios JUnit
 
 Disponíveis como Artifact
 
-14. Observações
+📝 14. Observações
 
 Os resultados de performance podem variar de acordo com as condições do ambiente de staging no momento da execução.
 
 Os resultados apresentados neste repositório correspondem às execuções realizadas durante esta avaliação.
+
+🏁 Entrega
+
+📝 Documentação completa
+
+https://harmonious-potential-7a5.notion.site/Desafio-T-cnico-QA-Lacrei-Sa-de-3d94c363fe40802a9d5dc92bb4d3453d
+
+🐙 Repositório
+
+https://github.com/CibeleFalaschi/desafio-lacrei-qa
+
+💙 Desafio Técnico QA — Lacrei Saúde
