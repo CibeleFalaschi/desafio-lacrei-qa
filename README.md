@@ -1,6 +1,6 @@
 Desafio QA — Lacrei Saúde
 
-Sobre o projeto
+1. Sobre o projeto
 
 Este repositório contém os artefatos desenvolvidos para o desafio técnico de QA da Lacrei Saúde, incluindo cenários Gherkin, documentação, evidências, testes de desempenho, testes automatizados e CI/CD.
 
@@ -14,7 +14,7 @@ GitHub Actions: https://github.com/CibeleFalaschi/desafio-lacrei-qa/actions
 
 Documentação completa no Notion: https://harmonious-potential-7a5.notion.site/Desafio-T-cnico-QA-Lacrei-Sa-de-3d94c363fe40802a9d5dc92bb4d3453d
 
-Ambiente e pré-requisitos
+2. Ambiente e pré-requisitos
 
 Ambiente de testes
 
@@ -48,7 +48,7 @@ Para reproduzir exatamente as dependências versionadas no projeto, recomenda-se
 
 npm ci
 
-Configuração do ambiente
+3. Configuração do ambiente
 
 Credenciais utilizadas nos testes não devem ser armazenadas diretamente no código.
 
@@ -56,19 +56,17 @@ As variáveis necessárias para os testes autenticados e de performance são con
 
 Exemplo:
 
-K6_EMAIL=seu_email
-K6_PASSWORD=sua_senha
+K6_EMAIL=seu_email K6_PASSWORD=sua_senha
 
 O arquivo .env está incluído no .gitignore e não deve ser enviado ao repositório.
 
 No GitHub Actions, as mesmas credenciais são fornecidas por meio de Repository Secrets:
 
-K6_EMAIL
-K6_PASSWORD
+K6_EMAIL K6_PASSWORD
 
 Não utilizar credenciais reais em arquivos versionados, screenshots ou documentação pública.
 
-Como executar os testes
+4. Como executar os testes
 
 4.1 Testes manuais
 
@@ -108,7 +106,7 @@ Também foi automatizado o fluxo de busca e agendamento.
 
 Para abrir o Cypress em modo interativo:
 
-npm run cy
+npm run cy:open
 
 Para executar os testes em modo headless:
 
@@ -126,8 +124,7 @@ k6 run performance/performance.js
 
 As credenciais devem estar disponíveis por meio das variáveis de ambiente:
 
-K6_EMAIL
-K6_PASSWORD
+K6_EMAIL K6_PASSWORD
 
 O teste avalia a busca de profissionais por especialidade e utiliza carga de até 30 usuários virtuais.
 
@@ -181,51 +178,9 @@ O relatório HTML da execução está em:
 
 performance/lighthouse-report.html
 
-Organização do projeto
+5. Organização do projeto
 
-desafio_lacrei/
-│
-├── .github/
-│   └── workflows/
-│       └── cypress.yml
-│
-├── cypress/
-│   ├── e2e/
-│   │   ├── cadastro.feature
-│   │   └── busca_agendamento.feature
-│   │
-│   ├── fixtures/
-│   │
-│   ├── screenshots/
-│   │
-│   └── support/
-│       ├── commands.js
-│       ├── e2e.js
-│       └── step_definitions/
-│           ├── cadastro.steps.js
-│           └── busca_agendamento.steps.js
-│
-├── docs/
-│   └── evidencias/
-│       ├── BUG-001...
-│       ├── BUG-002...
-│       ├── BUG-003...
-│       ├── BUG-004...
-│       ├── BUG-005...
-│       ├── BUG-006...
-│       └── BUG-007...
-│
-├── performance/
-│   ├── lighthouse-report.html
-│   ├── performance-report.html
-│   └── performance.js
-│
-├── .env
-├── .gitignore
-├── cypress.config.js
-├── package.json
-├── package-lock.json
-└── README.md
+desafio_lacrei/ │ ├── .github/ │ └── workflows/ │ └── cypress.yml │ ├── cypress/ │ ├── e2e/ │ │ ├── cadastro.feature │ │ └── busca_agendamento.feature │ │ │ ├── fixtures/ │ │ │ ├── screenshots/ │ │ │ └── support/ │ ├── commands.js │ ├── e2e.js │ └── step_definitions/ │ ├── cadastro.steps.js │ └── busca_agendamento.steps.js │ ├── docs/ │ └── evidencias/ │ ├── BUG-001... │ ├── BUG-002... │ ├── BUG-003... │ ├── BUG-004... │ ├── BUG-005... │ ├── BUG-006... │ └── BUG-007... │ ├── performance/ │ ├── lighthouse-report.html │ ├── performance-report.html │ └── performance.js │ ├── .env ├── .gitignore ├── cypress.config.js ├── package.json ├── package-lock.json └── README.md
 
 A pasta cypress/e2e/ contém os cenários Gherkin utilizados na automação.
 
@@ -233,7 +188,7 @@ A pasta docs/evidencias/ contém as evidências relacionadas aos bugs e oportuni
 
 A pasta performance/ contém o script de performance e os relatórios HTML gerados pelo k6 e pelo Lighthouse.
 
-Casos de teste em Gherkin
+6. Casos de teste em Gherkin
 
 Os cenários Gherkin estão organizados no diretório:
 
@@ -275,7 +230,7 @@ Busca de profissional por especialidade
 
 Acesso ao agendamento de profissional
 
-Bugs e evidências
+7. Bugs e evidências
 
 Foram identificados e documentados sete bugs/oportunidades de melhoria durante a avaliação.
 
@@ -299,7 +254,7 @@ ausência de indicador visual de foco durante a navegação por teclado.
 
 Antes da publicação, evidências contendo dados pessoais devem ter essas informações ocultadas.
 
-Acessibilidade
+8. Acessibilidade
 
 Foram realizados testes de acessibilidade utilizando Lighthouse, navegação por teclado e leitor de tela NVDA.
 
@@ -339,7 +294,7 @@ Durante a avaliação da aplicação, os elementos da interface foram anunciados
 
 A leitura dos elementos ocorreu de forma consistente durante o teste realizado. Não foi identificado, neste teste, comportamento que justificasse a abertura de um bug relacionado à leitura por leitor de tela.
 
-Testes automatizados
+9. Testes automatizados
 
 A automação foi desenvolvida utilizando Cypress 16.0.0, Cucumber e o preprocessor @badeball/cypress-cucumber-preprocessor.
 
@@ -371,7 +326,7 @@ Busca e agendamento
 
 Arquivo:
 
-cypress/e2e/busca_agendamento.feature
+cypress/e2e/busca\_agendamento.feature
 
 Fluxo:
 
@@ -403,7 +358,7 @@ K6_PASSWORD
 
 O arquivo .env está incluído no .gitignore.
 
-CI/CD — GitHub Actions
+10. CI/CD — GitHub Actions
 
 O projeto possui um workflow configurado no GitHub Actions para execução automática dos testes E2E.
 
@@ -441,7 +396,7 @@ cypress-relatorios
 
 O Artifact contém os relatórios JUnit gerados para os arquivos .feature executados, permitindo consultar os resultados após a execução do workflow.
 
-Documentação
+11. Documentação
 
 A documentação detalhada da execução dos testes está organizada no Notion.
 
@@ -473,7 +428,7 @@ limitações e próximos passos.
 
 Este README funciona como um guia técnico e de execução do projeto.
 
-Status do projeto
+12. Status do projeto
 
 Concluído
 
@@ -511,7 +466,7 @@ Revisão final de segurança e documentação
 
 Criação/revisão dos GitHub Issues dos bugs e melhorias
 
-Resultados principais
+13. Resultados principais
 
 Avaliação
 
@@ -557,7 +512,7 @@ Relatórios JUnit
 
 Disponíveis como Artifact
 
-Observações
+14. Observações
 
 Os resultados de performance podem variar de acordo com as condições do ambiente de staging no momento da execução.
 
