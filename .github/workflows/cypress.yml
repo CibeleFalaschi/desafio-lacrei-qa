@@ -38,3 +38,4 @@ jobs:
             cypress/videos
           if-no-files-found: ignore
           retention-days: 14
+# CI/CD configurado para execução automática em push e pull request
