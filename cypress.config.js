@@ -10,6 +10,13 @@ const {
 } = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
+  reporter: "junit",
+
+  reporterOptions: {
+    mochaFile: "cypress/results/junit-[hash].xml",
+    toConsole: true,
+  },
+
   e2e: {
     specPattern: "**/*.feature",
 
