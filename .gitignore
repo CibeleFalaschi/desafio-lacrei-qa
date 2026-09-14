@@ -1,0 +1,19 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/reports/
+
+.DS_Store
+npm-debug.log*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Evidência manual de vídeo - arquivo excede o limite do GitHub
+docs/evidencias/*.mp4
