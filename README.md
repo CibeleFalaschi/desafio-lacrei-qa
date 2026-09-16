@@ -133,7 +133,7 @@ A automação foi implementada utilizando:
 
 O fluxo prioritário definido para automação é o **cadastro de pessoa paciente**, conforme requisito do desafio.
 
-Também foi automatizado o fluxo de **busca e agendamento**.
+Também foi automatizado o fluxo de **login, busca e agendamento**.
 
 #### 🖥️ Abrir o Cypress em modo interativo
 
@@ -442,44 +442,43 @@ O workflow é executado automaticamente em:
 
 ```text
 push
+
 pull_request
-```
 
-### 🔄 Etapas do pipeline
-
-```text
 Checkout do código
+
         ↓
+
 Configuração do Node.js
+
         ↓
+
 Instalação das dependências com npm ci
+
         ↓
+
 Execução dos testes Cypress + Cucumber
+
         ↓
+
 Geração dos relatórios JUnit
+
         ↓
+
 Armazenamento dos relatórios e evidências
-```
 
 ### ▶️ Comando utilizado no CI
 
-```bash
 npx cypress run --e2e --browser chrome
-```
 
 As credenciais utilizadas nos testes autenticados são fornecidas por meio de **GitHub Repository Secrets**, sem exposição no código.
 
 ### 📊 Relatórios do pipeline
 
-Ao final da execução, o GitHub Actions disponibiliza o Artifact:
+Ao final da execução, o GitHub Actions disponibiliza os resultados como um **Artifact** denominado:
 
 ```text
 cypress-relatorios
-```
-
-O Artifact contém os relatórios JUnit gerados para os arquivos `.feature` executados, permitindo consultar os resultados após a execução do workflow.
-
----
 
 ## 📚 11. Documentação
 
